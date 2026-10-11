@@ -1,13 +1,19 @@
 # 🤖 MEHWISH ALAM — Portfolio Website
 
+[![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://mehwish-portfolio-eight.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/MehwishAlam123/MY-PORTFOLIO)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 An interactive, responsive portfolio website crafted for **MEHWISH ALAM**, Second-Year B.Tech Student in **Computer Science & Engineering (AI/ML)** at **Ramrao Adik Institute of Technology, D.Y. Patil University (RAIT)**, Navi Mumbai.
 
 ---
 
-## 🌟 Live Demo & Preview
+## 🌟 Live Demo & Deployments
 
-- **Local Preview URL:** `http://localhost:8080/` (or double-click [`index.html`](./index.html) in your browser)
-- **Zero Dependencies:** Pure semantic HTML5, Vanilla CSS3 (custom design system), and Vanilla JavaScript (ES6+).
+- 🚀 **Live Production (Vercel):** [https://mehwish-portfolio-eight.vercel.app](https://mehwish-portfolio-eight.vercel.app)
+- 🐙 **GitHub Repository:** [https://github.com/MehwishAlam123/MY-PORTFOLIO](https://github.com/MehwishAlam123/MY-PORTFOLIO)
+- 💻 **Local Preview:** `http://localhost:8080/` (or double-click [`index.html`](./index.html))
+- ⚡ **Zero Dependencies:** Pure semantic HTML5, Vanilla CSS3 (custom dark/light design system), and Vanilla JavaScript (ES6+).
 
 ---
 
