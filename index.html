@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehwish Alam | AI/ML Engineer & Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Mehwish Alam - B.Tech CSE (AI/ML) Second Year at DY Patil University (RAIT). Machine learning, deep learning medical AI, and responsive web development.">
+  <meta name="keywords" content="Mehwish Alam, Portfolio, AI ML Engineer, RAIT DY Patil, Knee MRI Detection, Minimax Random Forest, Python Developer">
+  <meta name="author" content="Mehwish Alam">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Background Canvas Glow -->
+  <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom-right" aria-hidden="true"></div>
+  <canvas id="neuralCanvas" class="neural-bg" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" aria-label="Mehwish Alam Home">
+        <span class="brand-badge"><i class="fa-solid fa-brain"></i></span>
+        <span class="brand-text">MEHWISH <span class="gradient-text">ALAM</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link"><i class="fa-solid fa-code-fork"></i> Projects</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-bolt"></i> Skills</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+          <li class="nav-item"><a href="#responsibility" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Responsibility</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="btn-icon theme-btn" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon"></i>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button id="openResumeBtn" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menuToggle" class="mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for SDE & ML Internships</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Mehwish Alam</span>
+          </h1>
+
+          <!-- Dynamic Typing Text -->
+          <div class="hero-typewriter">
+            <span class="type-prefix">Specialized in: </span>
+            <span id="typedText" class="dynamic-text"></span>
+            <span class="cursor">&nbsp;</span>
+          </div>
+
+          <!-- Description -->
+          <p class="hero-description">
+            Second-year <strong>B.Tech in Computer Science & Engineering (AI/ML)</strong> at 
+            <strong>Ramrao Adik Institute of Technology, D.Y. Patil University (RAIT)</strong>. 
+            Passionate about bridging applied machine learning, medical deep learning, and intuitive web experiences.
+          </p>
+
+          <!-- Action CTAs -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-layer-group"></i> Explore Projects
+            </a>
+            <a href="#contact" class="btn btn-glass">
+              <i class="fa-solid fa-paper-plane"></i> Get in Touch
+            </a>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">30+</span>
+              <span class="stat-label">LeetCode Solved</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Core Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2029</span>
+              <span class="stat-label">B.Tech Batch RAIT</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">IETE</span>
+              <span class="stat-label">Tech Co-Head</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Profile Card -->
+        <div class="hero-visual">
+          <div class="avatar-card-wrapper">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+
+            <div class="avatar-card glass-panel">
+              <div class="avatar-image-container">
+                <img src="./assets/images/mehwish_avatar.jpg" alt="Mehwish Alam AI/ML Developer Avatar" class="avatar-img" width="440" height="440">
+                <div class="avatar-status-pill">
+                  <i class="fa-solid fa-sparkles"></i> AI Engineer In The Making
+                </div>
+              </div>
+
+              <!-- Floating Badges -->
+              <div class="floating-chip chip-left">
+                <i class="fa-brands fa-python"></i>
+                <div>
+                  <strong>Python & ML</strong>
+                  <span>Deep Learning & Minimax</span>
+                </div>
+              </div>
+
+              <div class="floating-chip chip-right">
+                <i class="fa-solid fa-laptop-code"></i>
+                <div>
+                  <strong>Frontend Dev</strong>
+                  <span>HTML, CSS & JS UI</span>
+                </div>
+              </div>
+
+              <div class="floating-chip chip-bottom">
+                <i class="fa-solid fa-hospital-user"></i>
+                <div>
+                  <strong>Medical AI</strong>
+                  <span>Knee MRI 12-Abnormality DL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-id-badge"></i> About Me</span>
+          <h2 class="section-title">Driven by Curiosity, <span class="gradient-text">Engineered with Code</span></h2>
+          <p class="section-subtitle">A glimpse into my background, core strengths, and engineering philosophy.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio Information -->
+          <div class="about-text-content glass-panel">
+            <div class="about-header-pill">
+              <i class="fa-solid fa-graduation-cap"></i> RAIT, D.Y. Patil University • Second Year
+            </div>
+            <h3>Transforming complex algorithms into real-world applications</h3>
+            <p>
+              I am a second-year <strong>B.Tech student in Computer Science and Engineering (AI/ML)</strong> at 
+              Ramrao Adik Institute of Technology (RAIT), D.Y. Patil University, Navi Mumbai. My journey is rooted in a fascination 
+              with how intelligent systems can solve critical problems — from medical imaging diagnostics to responsive, human-centric web applications.
+            </p>
+            <p>
+              Whether engineering a <strong>multimodal medical deep learning model</strong> for Knee MRI abnormality detection, building hybrid 
+              algorithms combining Minimax with Random Forests, or developing responsive web applications, I bring rigor and end-to-end commitment to every build.
+            </p>
+
+            <div class="strengths-box">
+              <div class="strength-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="strength-body">
+                <strong>Core Strength</strong>
+                <p>Self-driven learner who delivers end-to-end projects independently, from requirements planning and PRD documentation through implementation and quantitative evaluation.</p>
+              </div>
+            </div>
+
+            <!-- Quick Info Grid -->
+            <div class="about-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label"><i class="fa-solid fa-location-dot"></i> Location</span>
+                <span class="meta-val">Navi Mumbai, Maharashtra</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label"><i class="fa-solid fa-university"></i> University</span>
+                <span class="meta-val">DY Patil University (RAIT)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label"><i class="fa-solid fa-envelope"></i> Email</span>
+                <a href="mailto:mehwishalam987@gmail.com" class="meta-val link">mehwishalam987@gmail.com</a>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label"><i class="fa-solid fa-code-branch"></i> GitHub</span>
+                <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" class="meta-val link">MehwishAlam123</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION (REVOLVING CIRCLE -> STOPPED SQUARE) -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-arrows-rotate"></i> Revolving 3D Circle • Square Morph</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Engineering Projects</span></h2>
+          <p class="section-subtitle">Projects revolve in an interactive 3D circle. Move your cursor or sweep to steer revolution; when motion halts, the formation seamlessly morphs into a technical square.</p>
+        </div>
+
+        <!-- Circular Project Orbit HUD & Navigation Bar -->
+        <div class="circular-projects-hud">
+          <div class="orbit-telemetry">
+            <span class="orbit-pulse-dot" id="orbitPulseDot"></span>
+            <span class="orbit-code" id="orbitProjectCode">ORBIT RADAR // [PROJECT 01 / 03]</span>
+            <strong class="orbit-current-title" id="orbitProjectTitle">Knee MRI Abnormality Detection Model</strong>
+            <span class="morph-badge" id="morphStateBadge"><i class="fa-solid fa-arrows-rotate"></i> REVOLVING IN CIRCLE</span>
+          </div>
+          
+          <div class="orbit-nav-controls">
+            <!-- Mode Switchers: Revolve in Circle vs Stop in Square -->
+            <div class="morph-toggle-group">
+              <button class="orbit-mode-btn active" id="revolveCircleBtn" title="Revolve projects in a circular path">
+                <i class="fa-solid fa-arrows-rotate"></i> Revolve Circle
+              </button>
+              <button class="orbit-mode-btn" id="stopSquareBtn" title="Stop and morph into a square">
+                <i class="fa-solid fa-square"></i> Stop & Form Square
+              </button>
+            </div>
+
+            <button class="orbit-nav-btn prev-btn" id="prevProjectBtn" aria-label="Previous Project">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="orbit-pills-list">
+              <button class="orbit-pill active" data-project-index="0">01 • Knee MRI AI</button>
+              <button class="orbit-pill" data-project-index="1">02 • Tic-Tac-Toe AI</button>
+              <button class="orbit-pill" data-project-index="2">03 • Coffee Shop Web</button>
+            </div>
+            <button class="orbit-nav-btn next-btn" id="nextProjectBtn" aria-label="Next Project">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3D Circular Orbit & Morphing Square Stage -->
+        <div class="projects-circular-stage is-revolving" id="projectsCircularStage">
+          <!-- Ambient 3D Floor Grid & Geometry Morph Frame -->
+          <div class="orbit-floor-grid"></div>
+          
+          <!-- Morphing Geometry Frame (Circle while revolving -> Square when stopped) -->
+          <div class="geometry-morph-frame" id="geometryMorphFrame">
+            <div class="sq-corner-bracket sq-tl"></div>
+            <div class="sq-corner-bracket sq-tr"></div>
+            <div class="sq-corner-bracket sq-bl"></div>
+            <div class="sq-corner-bracket sq-br"></div>
+            <div class="morph-center-reticle"></div>
+          </div>
+
+          <div class="orbit-ring-guide" id="orbitRingGuide"></div>
+
+          <!-- The Rotating 3D Ring (90 deg intervals for 4 projects) -->
+          <div class="projects-carousel-ring" id="projectsCarouselRing">
+            
+            <!-- Project 1: Knee MRI Abnormality Detection (0 deg) -->
+            <article class="project-card glass-panel circular-project-card active" data-index="0">
+              <div class="project-img-wrapper">
+                <img src="./assets/images/mri_project.jpg" alt="Knee MRI Abnormality Detection Model AI Interface" class="project-img" loading="lazy">
+                <div class="project-badge status-active">
+                  <i class="fa-solid fa-spinner fa-spin"></i> In Progress • Research Model
+                </div>
+                <div class="circular-node-indicator">PROJECT 01 // NORTH</div>
+              </div>
+              <div class="project-content">
+                <div class="project-category-tag">
+                  <i class="fa-solid fa-notes-medical"></i> Deep Learning • Medical Imaging
+                </div>
+                <h3 class="project-title">Knee MRI Abnormality Detection Model</h3>
+                
+                <!-- Directly Attached GitHub Repository Link -->
+                <div class="project-repo-attached-row">
+                  <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" class="project-github-repo-badge" title="Open GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="repo-slug">MehwishAlam123/Knee-MRI-Detection</span>
+                    <span class="repo-tag"><i class="fa-solid fa-code-fork"></i> Research Repo</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square repo-launch"></i>
+                  </a>
+                  <button type="button" class="btn-copy-repo" data-repo="https://github.com/MehwishAlam123" title="Copy GitHub Repo URL" aria-label="Copy GitHub Repo URL">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <p class="project-desc">
+                  Developing a multimodal deep learning pipeline to detect <strong>12 knee abnormalities</strong> from complex MRI scans. Seamlessly fuses 3D DICOM medical imaging with clinical radiology report text via weak-labeling strategies and multi-label classification.
+                </p>
+                
+                <div class="project-features">
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> 12 knee pathology detection classes</div>
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> DICOM volume preprocessing & spatial heatmaps</div>
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> Radiology NLP integration with weak supervision</div>
+                </div>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Deep Learning</span>
+                  <span class="tech-pill">DICOM Imaging</span>
+                  <span class="tech-pill">Multi-Label Classification</span>
+                  <span class="tech-pill">Medical AI</span>
+                </div>
+
+                <div class="project-footer">
+                  <button class="btn btn-outline btn-sm open-mri-modal">
+                    <i class="fa-solid fa-circle-info"></i> Architecture Deep Dive
+                  </button>
+                  <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Tic-Tac-Toe Prediction Model (90 deg) -->
+            <article class="project-card glass-panel circular-project-card" data-index="1">
+              <div class="project-img-wrapper">
+                <img src="./assets/images/tictactoe_project.jpg" alt="Tic-Tac-Toe Prediction Hybrid AI Interface" class="project-img" loading="lazy">
+                <div class="project-badge status-completed">
+                  <i class="fa-solid fa-check-circle"></i> Hybrid AI System
+                </div>
+                <div class="circular-node-indicator">PROJECT 02 // EAST</div>
+              </div>
+              <div class="project-content">
+                <div class="project-category-tag">
+                  <i class="fa-solid fa-robot"></i> Game Intelligence • Machine Learning
+                </div>
+                <h3 class="project-title">Tic-Tac-Toe Move Prediction Model</h3>
+
+                <!-- Directly Attached GitHub Repository Link -->
+                <div class="project-repo-attached-row">
+                  <a href="https://github.com/MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL" target="_blank" rel="noopener noreferrer" class="project-github-repo-badge" title="Open GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="repo-slug">MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL</span>
+                    <span class="repo-tag"><i class="fa-solid fa-code-fork"></i> GitHub Repo</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square repo-launch"></i>
+                  </a>
+                  <button type="button" class="btn-copy-repo" data-repo="https://github.com/MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL" title="Copy GitHub Repo URL" aria-label="Copy GitHub Repo URL">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <p class="project-desc">
+                  Engineered an intelligent hybrid game AI synthesizing game-theoretic <strong>Minimax</strong> decision trees with a <strong>Random Forest Classifier</strong> to evaluate state advantages and predict moves in real-time. Backed by a comprehensive Product Requirement Document (PRD).
+                </p>
+
+                <div class="project-features">
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> Hybrid Minimax depth tree + Random Forest weighting</div>
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> Real-time board state scoring & move suggestion</div>
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> Formal PRD covering scope, heuristics & evaluation</div>
+                </div>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Minimax Algorithm</span>
+                  <span class="tech-pill">Random Forest</span>
+                  <span class="tech-pill">Scikit-Learn</span>
+                  <span class="tech-pill">PRD Engineering</span>
+                </div>
+
+                <div class="project-footer">
+                  <button class="btn btn-outline btn-sm open-game-modal">
+                    <i class="fa-solid fa-gamepad"></i> Play AI Demo
+                  </button>
+                  <a href="https://github.com/MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Coffee Shop Website (180 deg) -->
+            <article class="project-card glass-panel circular-project-card" data-index="2">
+              <div class="project-img-wrapper">
+                <img src="./assets/images/coffee_project.jpg" alt="Coffee Shop Responsive Website Mockup" class="project-img" loading="lazy">
+                <div class="project-badge status-live">
+                  <i class="fa-solid fa-globe"></i> Responsive Web Platform
+                </div>
+                <div class="circular-node-indicator">PROJECT 03 // SOUTH</div>
+              </div>
+              <div class="project-content">
+                <div class="project-category-tag">
+                  <i class="fa-solid fa-code"></i> Frontend Engineering • UX Design
+                </div>
+                <h3 class="project-title">Artisan Coffee Shop Website</h3>
+
+                <!-- Directly Attached GitHub Repository Link -->
+                <div class="project-repo-attached-row">
+                  <a href="https://github.com/MehwishAlam123/COFFEE-WEBSITE" target="_blank" rel="noopener noreferrer" class="project-github-repo-badge" title="Open GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="repo-slug">MehwishAlam123/COFFEE-WEBSITE</span>
+                    <span class="repo-tag"><i class="fa-solid fa-code-fork"></i> GitHub Repo</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square repo-launch"></i>
+                  </a>
+                  <button type="button" class="btn-copy-repo" data-repo="https://github.com/MehwishAlam123/COFFEE-WEBSITE" title="Copy GitHub Repo URL" aria-label="Copy GitHub Repo URL">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <p class="project-desc">
+                  Developed a responsive 4-page modern commercial website featuring dedicated sections for <strong>Home, Menu, Gallery, and Testimonials</strong>. Built with custom interactive UI elements, smooth navigation, and a mobile-optimized fluid grid.
+                </p>
+
+                <div class="project-features">
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> 4 integrated pages: Home, Menu, Gallery, Reviews</div>
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> Custom mobile hamburger menu and fluid typography</div>
+                  <div class="feature-item"><i class="fa-solid fa-check"></i> Interactive item cards and customer testimonial slider</div>
+                </div>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">HTML5</span>
+                  <span class="tech-pill">CSS3</span>
+                  <span class="tech-pill">JavaScript</span>
+                  <span class="tech-pill">Responsive Design</span>
+                  <span class="tech-pill">UI/UX</span>
+                </div>
+
+                <div class="project-footer">
+                  <button class="btn btn-outline btn-sm open-coffee-modal">
+                    <i class="fa-solid fa-laptop"></i> Interactive Preview
+                  </button>
+                  <a href="https://github.com/MehwishAlam123/COFFEE-WEBSITE" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-github"></i> View GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Cursor Orbit Gesture Trackpad -->
+        <div class="cursor-orbit-gesture-bar" id="cursorOrbitGestureBar">
+          <div class="gesture-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+          <div class="gesture-info">
+            <strong>CURSOR REVOLUTION SENSOR // ACTIVE</strong>
+            <span>Move your cursor horizontally to revolve through the circle. Pause cursor to morph into a square.</span>
+          </div>
+          <div class="gesture-dots">
+            <span class="g-dot active" data-gindex="0"></span>
+            <span class="g-dot" data-gindex="1"></span>
+            <span class="g-dot" data-gindex="2"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION (SEPARATE 3D CUBICALS & CURSOR TRACKING) -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-cubes"></i> 3D Technical Architecture</span>
+          <h2 class="section-title">Core <span class="gradient-text">Technologies & Systems</span></h2>
+          <p class="section-subtitle">Every technology is an independent, separate 3D technical cubical. Move your cursor across the arena — all cubicals dynamically float, maintain distinct separation, and track wherever your cursor travels.</p>
+        </div>
+
+        <!-- 3D Small Cubicals Telemetry Bar -->
+        <div class="cubicals-telemetry-bar">
+          <div class="telemetry-left">
+            <span class="cube-status-dot"></span>
+            <span class="telemetry-label">3D TECHNICAL CUBICALS //</span>
+            <span class="telemetry-coords" id="cubeCoords">CURSOR: [X: 0px, Y: 0px] | 16 SEPARATE CUBICALS: ACTIVE SWARM</span>
+          </div>
+          <div class="telemetry-right">
+            <div class="cubical-filter-chips">
+              <button class="c-filter-chip active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Cubicals (16)</button>
+              <button class="c-filter-chip" data-filter="ai"><i class="fa-solid fa-brain"></i> AI & ML</button>
+              <button class="c-filter-chip" data-filter="lang"><i class="fa-solid fa-code"></i> Languages</button>
+              <button class="c-filter-chip" data-filter="web"><i class="fa-solid fa-laptop-code"></i> Web & UI</button>
+              <button class="c-filter-chip" data-filter="sys"><i class="fa-solid fa-microchip"></i> Systems</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small 3D Cubicals Interactive Arena (Dynamic Separate Floating Cubicals) -->
+        <div class="small-cubicals-arena" id="smallCubicalsArena">
+          <!-- Cyber Ambient Arena Grid & Laser Reticle -->
+          <div class="cubicals-arena-grid"></div>
+          <div class="arena-cursor-reticle" id="arenaCursorReticle" aria-hidden="true">
+            <div class="reticle-ring"></div>
+            <div class="reticle-core"></div>
+            <div class="reticle-label" id="reticleLabel">SWARM FOCUS</div>
+          </div>
+          
+          <!-- Cubical 01: Deep Learning -->
+          <div class="tech-cube-item" data-cat="ai" data-skill="Deep Learning" data-spec="Multimodal neural networks for 12-class pathology diagnosis" data-proj="Knee MRI Abnormality Detection">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[01]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon purple"><i class="fa-solid fa-brain"></i></div>
+                <h4 class="cube-title">Deep Learning</h4>
+                <span class="cube-sub">AI / ML</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">NEURAL</span>
+                <i class="fa-solid fa-network-wired cube-back-icon"></i>
+                <span class="cube-back-sub">12-PATHOLOGY</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">DL.AI</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">TENSOR</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 02: DICOM Medical AI -->
+          <div class="tech-cube-item" data-cat="ai" data-skill="DICOM Medical AI" data-spec="3D volume preprocessing, weak-supervision & slice classification" data-proj="Knee MRI Detection (12 pathologies)">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[02]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon cyan"><i class="fa-solid fa-notes-medical"></i></div>
+                <h4 class="cube-title">DICOM Medical AI</h4>
+                <span class="cube-sub">Volumetric AI</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">3D.MRI</span>
+                <i class="fa-solid fa-file-medical cube-back-icon"></i>
+                <span class="cube-back-sub">WEAK-LABEL</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">DICOM</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">SCAN</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 03: Random Forest -->
+          <div class="tech-cube-item" data-cat="ai" data-skill="Random Forest" data-spec="Ensemble learning for board state heuristic probability weighting" data-proj="Tic-Tac-Toe Prediction Model">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[03]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon emerald"><i class="fa-solid fa-tree"></i></div>
+                <h4 class="cube-title">Random Forest</h4>
+                <span class="cube-sub">Ensemble ML</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">TREES</span>
+                <i class="fa-solid fa-sitemap cube-back-icon"></i>
+                <span class="cube-back-sub">HEURISTICS</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">RF.DEC</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">FOREST</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 04: Minimax Heuristics -->
+          <div class="tech-cube-item" data-cat="ai" data-skill="Minimax Heuristics" data-spec="Game-theoretic state-space search with real-time heuristic scoring" data-proj="Tic-Tac-Toe Prediction Model">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[04]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon amber"><i class="fa-solid fa-gamepad"></i></div>
+                <h4 class="cube-title">Minimax Search</h4>
+                <span class="cube-sub">Game Trees</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">GAME.AI</span>
+                <i class="fa-solid fa-chess cube-back-icon"></i>
+                <span class="cube-back-sub">STATE-SPACE</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">MINIMAX</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">TREE</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 05: Python -->
+          <div class="tech-cube-item" data-cat="lang" data-skill="Python" data-spec="Primary language for machine learning, medical image processing & algorithmic logic" data-proj="Knee MRI Model & Tic-Tac-Toe AI">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[05]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon cyan"><i class="fa-brands fa-python"></i></div>
+                <h4 class="cube-title">Python</h4>
+                <span class="cube-sub">AI / ML / Sci</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">PY.CORE</span>
+                <i class="fa-brands fa-python cube-back-icon"></i>
+                <span class="cube-back-sub">PYTHON 3</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">PYTHON</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">NUMPY</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 06: Java -->
+          <div class="tech-cube-item" data-cat="lang" data-skill="Java" data-spec="Object-Oriented Programming, modular software design, interfaces & encapsulation" data-proj="Core Software Systems & OOP">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[06]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon purple"><i class="fa-brands fa-java"></i></div>
+                <h4 class="cube-title">Java</h4>
+                <span class="cube-sub">OOP & Modular</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">JAVA.SYS</span>
+                <i class="fa-brands fa-java cube-back-icon"></i>
+                <span class="cube-back-sub">OOP/JVM</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">JAVA</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">CLASS</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 07: C Language -->
+          <div class="tech-cube-item" data-cat="lang" data-skill="C Language" data-spec="Pointers, manual memory layout & low-level data structures" data-proj="Systems Programming Foundations">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[07]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon emerald"><i class="fa-solid fa-c"></i></div>
+                <h4 class="cube-title">C Language</h4>
+                <span class="cube-sub">Systems & Memory</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">C.SYSTEMS</span>
+                <i class="fa-solid fa-memory cube-back-icon"></i>
+                <span class="cube-back-sub">POINTERS</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">LOW.LVL</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">MEMORY</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 08: JavaScript -->
+          <div class="tech-cube-item" data-cat="lang" data-skill="JavaScript" data-spec="ES6+ modern script, asynchronous event handling & interactive DOM manipulation" data-proj="Coffee Shop & Portfolio Web Apps">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[08]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon amber"><i class="fa-brands fa-js"></i></div>
+                <h4 class="cube-title">JavaScript</h4>
+                <span class="cube-sub">ES6+ Async</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">JS.ASYNC</span>
+                <i class="fa-brands fa-js cube-back-icon"></i>
+                <span class="cube-back-sub">DOM ENGINE</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">JS.ES6</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">ASYNC</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 09: HTML5 Semantic -->
+          <div class="tech-cube-item" data-cat="web" data-skill="HTML5 Semantic" data-spec="Accessible web page hierarchy, SEO tags & microdata structure" data-proj="Coffee Shop Website">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[09]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon orange"><i class="fa-brands fa-html5"></i></div>
+                <h4 class="cube-title">HTML5</h4>
+                <span class="cube-sub">Semantic & SEO</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">HTML5</span>
+                <i class="fa-brands fa-html5 cube-back-icon"></i>
+                <span class="cube-back-sub">STRUCTURE</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">SEMANTIC</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">SEO</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 10: CSS3 Architecture -->
+          <div class="tech-cube-item" data-cat="web" data-skill="CSS3 Architecture" data-spec="Flexbox, Grid, custom design systems, 3D CSS transforms & glassmorphism" data-proj="Responsive Portfolio Design">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[10]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon cyan"><i class="fa-brands fa-css3-alt"></i></div>
+                <h4 class="cube-title">CSS3 Styling</h4>
+                <span class="cube-sub">Grid & 3D CSS</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">CSS.3D</span>
+                <i class="fa-brands fa-css3-alt cube-back-icon"></i>
+                <span class="cube-back-sub">FLEX/GRID</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">STYLES</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">3D.FX</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 11: Responsive Design -->
+          <div class="tech-cube-item" data-cat="web" data-skill="Responsive Design" data-spec="Fluid layouts, breakpoints, mobile hamburger menus & touch events" data-proj="Coffee Shop & Web Platforms">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[11]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon purple"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h4 class="cube-title">Responsive UI</h4>
+                <span class="cube-sub">Fluid Layouts</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">MOBILE</span>
+                <i class="fa-solid fa-mobile-screen cube-back-icon"></i>
+                <span class="cube-back-sub">ADAPTIVE</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">TOUCH</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">FLUID</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 12: UI Component Design -->
+          <div class="tech-cube-item" data-cat="web" data-skill="UI Component Design" data-spec="Modal sheets, tab filters, interactive forms & validation" data-proj="Interactive Web Applications">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[12]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon emerald"><i class="fa-solid fa-cubes"></i></div>
+                <h4 class="cube-title">UI Components</h4>
+                <span class="cube-sub">Modals & Micro-UX</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">UI.UX</span>
+                <i class="fa-solid fa-cubes cube-back-icon"></i>
+                <span class="cube-back-sub">MODULAR</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">DESIGN</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">COMP</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 13: Scikit-Learn -->
+          <div class="tech-cube-item" data-cat="sys" data-skill="Scikit-Learn" data-spec="Ensemble algorithms, training pipelines, classification & validation matrices" data-proj="Tic-Tac-Toe Prediction Model">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[13]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon amber"><i class="fa-solid fa-diagram-project"></i></div>
+                <h4 class="cube-title">Scikit-Learn</h4>
+                <span class="cube-sub">ML Pipelines</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">SKLEARN</span>
+                <i class="fa-solid fa-chart-line cube-back-icon"></i>
+                <span class="cube-back-sub">PIPELINES</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">METRICS</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">FIT.ML</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 14: Weak Supervision -->
+          <div class="tech-cube-item" data-cat="sys" data-skill="Weak Supervision" data-spec="Extracting clinical labels from unstructured radiology text reports" data-proj="Knee MRI Abnormality Detection">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[14]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon purple"><i class="fa-solid fa-tags"></i></div>
+                <h4 class="cube-title">Weak Supervision</h4>
+                <span class="cube-sub">Clinical NLP</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">NLP.LABELS</span>
+                <i class="fa-solid fa-tags cube-back-icon"></i>
+                <span class="cube-back-sub">EXTRACTION</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">LABELS</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">CLINICAL</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 15: Multi-Label AI -->
+          <div class="tech-cube-item" data-cat="sys" data-skill="Multi-Label Classification" data-spec="Concurrent prediction of 12 distinct medical conditions from MRI scans" data-proj="Knee MRI Deep Learning Model">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[15]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon cyan"><i class="fa-solid fa-layer-group"></i></div>
+                <h4 class="cube-title">Multi-Label AI</h4>
+                <span class="cube-sub">12 Pathology Targets</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">MULTI.AI</span>
+                <i class="fa-solid fa-layer-group cube-back-icon"></i>
+                <span class="cube-back-sub">12 TARGETS</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">PARALLEL</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">PREDICT</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+          <!-- Cubical 16: OOP Architecture -->
+          <div class="tech-cube-item" data-cat="sys" data-skill="Object-Oriented Programming" data-spec="Encapsulation, inheritance, modularity and clean interface separation" data-proj="Java & Python System Builds">
+            <div class="tech-cube-3d">
+              <div class="cube-face face-front">
+                <div class="cube-hud-meta">
+                  <span class="cube-index">[16]</span>
+                  <span class="cube-led"></span>
+                </div>
+                <div class="cube-icon emerald"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <h4 class="cube-title">OOP Architecture</h4>
+                <span class="cube-sub">Modularity & SOLID</span>
+                <span class="cube-crosshair c-tl">+</span>
+                <span class="cube-crosshair c-br">+</span>
+              </div>
+              <div class="cube-face face-back">
+                <span class="cube-back-tag">OOP.ARCH</span>
+                <i class="fa-solid fa-boxes-stacked cube-back-icon"></i>
+                <span class="cube-back-sub">MODULAR</span>
+              </div>
+              <div class="cube-face face-right">
+                <span class="cube-side-label">SOLID</span>
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+              </div>
+              <div class="cube-face face-left">
+                <div class="cube-side-meter"><span></span><span></span><span></span></div>
+                <span class="cube-side-label">CLEAN</span>
+              </div>
+              <div class="cube-face face-top">
+                <div class="cube-cap-grid"><i class="fa-solid fa-microchip"></i></div>
+              </div>
+              <div class="cube-face face-bottom">
+                <div class="cube-cap-grid"><span class="cube-base-dot"></span></div>
+              </div>
+            </div>
+            <div class="cube-ambient-shadow"></div>
+          </div>
+
+        </div>
+
+        <!-- Real-Time Interactive Tech Inspector HUD -->
+        <div class="tech-inspector-hud glass-panel" id="techInspectorHud">
+          <div class="inspector-icon" id="inspectorIcon">
+            <i class="fa-solid fa-terminal"></i>
+          </div>
+          <div class="inspector-details">
+            <div class="inspector-headline">
+              <span class="inspector-label">HUD TELEMETRY //</span>
+              <strong id="inspectorTitle">Hover or click any small 3D cubical above</strong>
+            </div>
+            <div class="inspector-desc" id="inspectorDesc">
+              Displays architectural use cases and project deployments across Mehwish's portfolio.
+            </div>
+          </div>
+          <div class="inspector-proj-pill" id="inspectorProjPill">
+            <i class="fa-solid fa-circle-check"></i> <span id="inspectorProjText">Ready for Inspection</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION TIMELINE SECTION -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Trajectory</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Milestones</span></h2>
+          <p class="section-subtitle">Academic qualifications, university specialization, and schooling history.</p>
+        </div>
+
+        <div class="timeline-container">
+          
+          <!-- Timeline Item 1: B.Tech RAIT -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-time">2025 – 2029 • Present</div>
+              <h3 class="timeline-title">B.Tech in Computer Science & Engineering (AI/ML)</h3>
+              <h4 class="timeline-org">Ramrao Adik Institute of Technology, D.Y. Patil University (RAIT)</h4>
+              <p class="timeline-body">
+                Currently in Second Year. Immersed in Artificial Intelligence, Machine Learning algorithms, Data Structures & Algorithms, Object-Oriented Programming, and applied software engineering methodologies.
+              </p>
+              <div class="timeline-tags">
+                <span>Navi Mumbai</span>
+                <span>Second Year</span>
+                <span>AI/ML Specialization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Oxford Public School -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-time">2022 – 2024</div>
+              <h3 class="timeline-title">Higher Secondary Certificate (12th Grade)</h3>
+              <h4 class="timeline-org">Oxford Public School</h4>
+              <p class="timeline-body">
+                Completed secondary education with focused coursework in Mathematics, Physics, and Computer Science foundations.
+              </p>
+              <div class="timeline-tags">
+                <span>Science Stream</span>
+                <span>Higher Secondary (12th)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: Sacred Heart School -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-time">2022</div>
+              <h3 class="timeline-title">Secondary School Certificate (10th Grade)</h3>
+              <h4 class="timeline-org">Sacred Heart School</h4>
+              <p class="timeline-body">
+                Graduated secondary school with excellence across core sciences, mathematics, and analytical problem-solving.
+              </p>
+              <div class="timeline-tags">
+                <span>Secondary (10th)</span>
+                <span>Foundational Studies</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- POSITION OF RESPONSIBILITY SECTION -->
+    <section class="section responsibility-section" id="responsibility">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> Leadership</span>
+          <h2 class="section-title">Position of <span class="gradient-text">Responsibility</span></h2>
+          <p class="section-subtitle">Leading student technical committees, empowering peers, and organizing workshops.</p>
+        </div>
+
+        <div class="responsibility-card glass-panel">
+          <div class="resp-header">
+            <div class="resp-badge-icon">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="resp-title-group">
+              <span class="resp-meta-tag">Tech Committee Leadership</span>
+              <h3 class="resp-role">Technical Co-Head</h3>
+              <h4 class="resp-org">IETE Student Chapter</h4>
+            </div>
+          </div>
+          
+          <div class="resp-body">
+            <p class="resp-description">
+              Co-led a dedicated technical committee of student volunteers, spearheading hands-on practical learning experiences and technical events for the engineering community.
+            </p>
+
+            <div class="resp-highlights-grid">
+              <div class="resp-highlight-item">
+                <div class="rh-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="rh-text">
+                  <strong>Ethical Hacking Workshop</strong>
+                  <p>Organized and conducted a comprehensive hands-on Ethical Hacking workshop for student peers exploring cybersecurity fundamentals and tools.</p>
+                </div>
+              </div>
+
+              <div class="resp-highlight-item">
+                <div class="rh-icon"><i class="fa-brands fa-linux"></i></div>
+                <div class="rh-text">
+                  <strong>VirtualBox & Kali Linux</strong>
+                  <p>Guided students through practical environment setups using VirtualBox virtualization and core penetration testing tools on Kali Linux.</p>
+                </div>
+              </div>
+
+              <div class="resp-highlight-item">
+                <div class="rh-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="rh-text">
+                  <strong>Student Team Leadership</strong>
+                  <p>Co-led volunteer teams, coordinated technical logistics, managed session schedules, and mentored participants throughout the sessions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PORTFOLIO ASSISTANT SECTION -->
+    <section class="section ai-interactive-section" id="ai-assistant">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-comments"></i> Interactive Assistant</span>
+          <h2 class="section-title">Ask Mehwish's <span class="gradient-text">Portfolio Assistant</span></h2>
+          <p class="section-subtitle">Have a question about my projects, background, or availability? Chat with my interactive digital assistant.</p>
+        </div>
+
+        <div class="ai-chat-wrapper glass-panel">
+          <div class="chat-header">
+            <div class="chat-avatar">
+              <img src="./assets/images/mehwish_avatar.jpg" alt="Portfolio Avatar">
+              <span class="online-indicator"></span>
+            </div>
+            <div class="chat-title-group">
+              <h4>Mehwish Portfolio Assistant</h4>
+              <p>Powered by Resume Knowledge Base • Instant Answers</p>
+            </div>
+            <button id="resetChatBtn" class="btn-icon" title="Reset Conversation">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+
+          <div class="chat-body" id="chatMessages">
+            <div class="message msg-ai">
+              <div class="msg-bubble">
+                <p>Hello! 👋 I'm Mehwish's Portfolio Assistant. You can ask me anything about Mehwish's B.Tech CSE (AI/ML) degree at RAIT, technical projects, LeetCode progress, or how to contact her!</p>
+              </div>
+              <span class="msg-time">Just now</span>
+            </div>
+          </div>
+
+          <!-- Quick Question Suggestions -->
+          <div class="quick-chips">
+            <span class="quick-chip" data-query="Tell me about the Knee MRI model">🏥 Knee MRI Detection</span>
+            <span class="quick-chip" data-query="What is the Tic-Tac-Toe Prediction Model?">🎮 Tic-Tac-Toe Project</span>
+            <span class="quick-chip" data-query="What is Mehwish's education at RAIT?">🎓 Education & Degree</span>
+            <span class="quick-chip" data-query="What technical skills does Mehwish have?">⚡ Technical Skills</span>
+            <span class="quick-chip" data-query="How can I contact Mehwish for an internship?">💼 Contact for Internship</span>
+          </div>
+
+          <form id="chatForm" class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Ask a question about Mehwish's experience..." autocomplete="off">
+            <button type="submit" class="btn btn-primary chat-send-btn" aria-label="Send message">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-envelope-open-text"></i> Reach Out</span>
+          <h2 class="section-title">Let's Connect & <span class="gradient-text">Build Together</span></h2>
+          <p class="section-subtitle">Interested in discussing an internship opportunity, project collaboration, or tech chat? Drop a message!</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Column -->
+          <div class="contact-info-column">
+            
+            <div class="info-card glass-panel">
+              <div class="info-icon icon-purple"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-content">
+                <span class="info-label">Direct Email</span>
+                <a href="mailto:mehwishalam987@gmail.com" class="info-val">mehwishalam987@gmail.com</a>
+                <button class="copy-pill" data-copy="mehwishalam987@gmail.com"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+            </div>
+
+            <div class="info-card glass-panel">
+              <div class="info-icon icon-teal"><i class="fa-solid fa-phone"></i></div>
+              <div class="info-content">
+                <span class="info-label">Phone Contact</span>
+                <a href="tel:+919296565349" class="info-val">+91 9296565349</a>
+                <button class="copy-pill" data-copy="9296565349"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+            </div>
+
+            <div class="info-card glass-panel">
+              <div class="info-icon icon-blue"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-content">
+                <span class="info-label">Current Location</span>
+                <span class="info-val">Navi Mumbai, Maharashtra, India</span>
+              </div>
+            </div>
+
+            <div class="info-card glass-panel">
+              <div class="info-icon icon-amber"><i class="fa-brands fa-github"></i></div>
+              <div class="info-content">
+                <span class="info-label">GitHub Profile</span>
+                <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" class="info-val">github.com/MehwishAlam123</a>
+              </div>
+            </div>
+
+            <div class="info-card glass-panel">
+              <div class="info-icon icon-orange"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="info-content">
+                <span class="info-label">LeetCode</span>
+                <span class="info-val">Mehwish Alam (30+ Solved)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-column glass-panel">
+            <h3 class="form-title">Send a Direct Message</h3>
+            <p class="form-subtitle">Fill in the fields below and I'll get back to you promptly.</p>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="contactName">Your Name *</label>
+                  <input type="text" id="contactName" name="name" placeholder="e.g. Sarah Jenkins" required>
+                  <span class="error-msg" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Your Email *</label>
+                  <input type="email" id="contactEmail" name="email" placeholder="e.g. sarah@company.com" required>
+                  <span class="error-msg" id="emailError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject">Subject / Opportunity Type</label>
+                <select id="contactSubject" name="subject">
+                  <option value="Internship Opportunity">💼 Software Development / ML Internship</option>
+                  <option value="Project Collaboration">🤝 Project Collaboration / Research</option>
+                  <option value="Mentorship & Networking">☕ Tech Chat & Mentorship</option>
+                  <option value="General Inquiry">💬 General Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Message *</label>
+                <textarea id="contactMessage" name="message" rows="5" placeholder="Share details about your team, project, or internship role..." required></textarea>
+                <span class="error-msg" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block submit-btn" id="submitFormBtn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="nav-brand">
+          <span class="brand-badge"><i class="fa-solid fa-brain"></i></span>
+          <span class="brand-text">MEHWISH <span class="gradient-text">ALAM</span></span>
+        </a>
+        <p>B.Tech CSE (AI/ML) Second Year • DY Patil University (RAIT)</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#responsibility">Responsibility</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:mehwishalam987@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:9296565349" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Mehwish Alam. Designed & Developed with AI Pair Programming. All rights reserved.</p>
+        <button id="backToTopBtn" class="back-to-top" title="Back to Top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- RESUME MODAL -->
+  <div class="modal-backdrop" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-invoice text-accent"></i>
+          <h3 id="resumeModalTitle">Mehwish Alam — Curriculum Vitae</h3>
+        </div>
+        <div class="modal-actions-right">
+          <button id="printResumeBtn" class="btn btn-outline btn-sm"><i class="fa-solid fa-print"></i> Print / PDF</button>
+          <button class="modal-close-btn" data-close="resumeModal" aria-label="Close Modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body resume-modal-body" id="printableResumeArea">
+        <div class="resume-sheet">
+          <!-- Header -->
+          <div class="resume-header">
+            <h1 class="r-name">MEHWISH ALAM</h1>
+            <p class="r-contact">Navi Mumbai, Maharashtra | 9296565349 | mehwishalam987@gmail.com</p>
+            <p class="r-links">GitHub: <a href="https://github.com/MehwishAlam123" target="_blank">MehwishAlam123</a> | LeetCode: Mehwish Alam</p>
+          </div>
+
+          <!-- Summary -->
+          <div class="r-section">
+            <h2 class="r-title">SUMMARY</h2>
+            <p class="r-text">
+              Second-year B.Tech student in Computer Science & Engineering (AI/ML) with a strong foundation in Python, Java, JavaScript, and applied machine learning. Built responsive web interfaces, hybrid AI systems, and deep learning models through hands-on projects. Seeking a Software Development or Machine Learning internship to apply technical skills to real-world projects.
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="r-section">
+            <h2 class="r-title">EDUCATION</h2>
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <strong>Ramrao Adik Institute of Technology, D.Y. Patil University</strong>
+                <span>2025–2029</span>
+              </div>
+              <div class="r-sub">B.Tech in Computer Science & Engineering (AI/ML), Second Year</div>
+            </div>
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <strong>Oxford Public School</strong>
+                <span>2022–2024</span>
+              </div>
+              <div class="r-sub">Higher Secondary (12th)</div>
+            </div>
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <strong>Sacred Heart School</strong>
+                <span>2022</span>
+              </div>
+              <div class="r-sub">Secondary (10th)</div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="r-section">
+            <h2 class="r-title">TECHNICAL SKILLS</h2>
+            <ul class="r-bullet-list">
+              <li><strong>Programming Languages:</strong> Python, C, Java</li>
+              <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (basics)</li>
+              <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code</li>
+              <li><strong>Concepts:</strong> Data Structures & Algorithms, Object-Oriented Programming, Responsive Web Design basics</li>
+            </ul>
+          </div>
+
+          <!-- Projects -->
+          <div class="r-section">
+            <h2 class="r-title">PROJECTS</h2>
+            
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <div>
+                  <strong>Coffee Shop Website</strong>
+                  <a href="https://github.com/MehwishAlam123/COFFEE-WEBSITE" target="_blank" rel="noopener noreferrer" class="resume-repo-link" title="Open GitHub Repository">
+                    <i class="fa-brands fa-github"></i> MehwishAlam123/COFFEE-WEBSITE
+                  </a>
+                </div>
+                <span>HTML, CSS, JavaScript</span>
+              </div>
+              <ul class="r-bullet-list">
+                <li>Developed a responsive 4-page website (Home, Menu, Gallery, Testimonials) with interactive UI components and a mobile-friendly layout.</li>
+              </ul>
+            </div>
+
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <div>
+                  <strong>Tic-Tac-Toe Prediction Model</strong>
+                  <a href="https://github.com/MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL" target="_blank" rel="noopener noreferrer" class="resume-repo-link" title="Open GitHub Repository">
+                    <i class="fa-brands fa-github"></i> MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL
+                  </a>
+                </div>
+                <span>Python, Minimax, Random Forest Classifier</span>
+              </div>
+              <ul class="r-bullet-list">
+                <li>Engineered a hybrid AI combining Minimax with a Random Forest Classifier to predict and evaluate every move in real time, supported by a complete PRD covering scope, design, and evaluation.</li>
+              </ul>
+            </div>
+
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <div>
+                  <strong>Knee MRI Abnormality Detection Model (In Progress)</strong>
+                  <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" class="resume-repo-link" title="Open GitHub Repository">
+                    <i class="fa-brands fa-github"></i> MehwishAlam123/Knee-MRI-Detection
+                  </a>
+                </div>
+                <span>Python, Deep Learning, Medical Imaging</span>
+              </div>
+              <ul class="r-bullet-list">
+                <li>Developing a multimodal deep learning model to detect 12 knee abnormalities from MRI scans, combining DICOM imaging with radiology report text via weak-labeling and multi-label classification.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Coding Practice -->
+          <div class="r-section">
+            <h2 class="r-title">CODING PRACTICE</h2>
+            <ul class="r-bullet-list">
+              <li>Solved 30+ Data Structures & Algorithms problems on LeetCode using Python and C, including binary trees, sliding window, two-pointer techniques, linked lists, and stacks.</li>
+            </ul>
+          </div>
+
+          <!-- Position of Responsibility -->
+          <div class="r-section">
+            <h2 class="r-title">POSITION OF RESPONSIBILITY</h2>
+            <div class="r-entry">
+              <div class="r-entry-head">
+                <strong>Technical Co-Head — Tech Committee</strong>
+                <span>IETE Student Chapter</span>
+              </div>
+              <ul class="r-bullet-list">
+                <li>Co-led a technical committee of student volunteers and organized a hands-on Ethical Hacking workshop covering VirtualBox and Kali Linux for the student community.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Strengths -->
+          <div class="r-section">
+            <h2 class="r-title">STRENGTHS</h2>
+            <ul class="r-bullet-list">
+              <li>Self-driven learner who delivers end-to-end projects independently, from requirements planning through implementation and evaluation.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE PLAYABLE TIC-TAC-TOE HYBRID AI DEMO MODAL -->
+  <div class="modal-backdrop" id="gameModal" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-gamepad text-accent"></i>
+          <h3 id="gameModalTitle">Hybrid AI Minimax + ML Move Predictor</h3>
+        </div>
+        <button class="modal-close-btn" data-close="gameModal" aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body game-modal-body">
+        <div class="game-intro">
+          <p>Experience Mehwish's project concept in action! Play as <strong>X</strong> against the simulated <strong>Minimax + Random Forest AI (O)</strong>.</p>
+          <div style="margin-top: 0.75rem;">
+            <a href="https://github.com/MehwishAlam123/TICTACTOE-AI-PREDICTION-MODEL" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fa-brands fa-github"></i> Open TICTACTOE-AI-PREDICTION-MODEL Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- AI Analytics Dashboard Bar -->
+        <div class="ai-live-telemetry">
+          <div class="telemetry-item">
+            <span class="telemetry-label">AI Advantage Score</span>
+            <div class="advantage-bar-wrapper">
+              <div class="advantage-fill" id="advantageFill" style="width: 50%;"></div>
+            </div>
+            <span class="telemetry-value" id="advantageScore">50% Neutral</span>
+          </div>
+          <div class="telemetry-item">
+            <span class="telemetry-label">Predicted Best Next Move</span>
+            <span class="telemetry-badge" id="predictedMoveBadge">Center (Square 4)</span>
+          </div>
+        </div>
+
+        <!-- Tic-Tac-Toe Board -->
+        <div class="ttt-board" id="tttBoard">
+          <button class="ttt-cell" data-index="0" aria-label="Square 0"></button>
+          <button class="ttt-cell" data-index="1" aria-label="Square 1"></button>
+          <button class="ttt-cell" data-index="2" aria-label="Square 2"></button>
+          <button class="ttt-cell" data-index="3" aria-label="Square 3"></button>
+          <button class="ttt-cell" data-index="4" aria-label="Square 4"></button>
+          <button class="ttt-cell" data-index="5" aria-label="Square 5"></button>
+          <button class="ttt-cell" data-index="6" aria-label="Square 6"></button>
+          <button class="ttt-cell" data-index="7" aria-label="Square 7"></button>
+          <button class="ttt-cell" data-index="8" aria-label="Square 8"></button>
+        </div>
+
+        <!-- Game Status -->
+        <div class="game-status-row">
+          <div class="game-status" id="gameStatusText">Your turn! Place an <strong>X</strong></div>
+          <button id="resetGameBtn" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-rotate"></i> Reset Game
+          </button>
+        </div>
+
+        <div class="game-details-box">
+          <strong><i class="fa-solid fa-microchip"></i> How the Hybrid Model Works:</strong>
+          <p>Minimax explores all possible terminal states (depth up to 9), while the Random Forest classifier assigns probabilistic weights to board topology (center dominance, corner forks, block threats) to make unbeatable evaluations in milliseconds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MRI DEEP DIVE MODAL -->
+  <div class="modal-backdrop" id="mriModal" role="dialog" aria-modal="true" aria-labelledby="mriModalTitle">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-notes-medical text-accent"></i>
+          <h3 id="mriModalTitle">Knee MRI Abnormality Detection Model (Research)</h3>
+        </div>
+        <button class="modal-close-btn" data-close="mriModal" aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body mri-modal-body">
+        <div class="mri-modal-hero">
+          <img src="./assets/images/mri_project.jpg" alt="MRI Model Interface" class="modal-banner-img">
+        </div>
+        <div class="mri-details-content">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.8rem;">
+            <h4 style="margin: 0;">Project Overview & Innovation</h4>
+            <a href="https://github.com/MehwishAlam123" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fa-brands fa-github"></i> View Knee MRI Research Repo
+            </a>
+          </div>
+          <p>
+            Knee injuries such as ACL tears, meniscus abnormalities, and chondral defects require highly accurate assessment from multi-slice MRI scans. This project develops a <strong>multimodal deep learning system</strong> designed to detect 12 specific knee abnormalities simultaneously.
+          </p>
+          
+          <div class="mri-spec-grid">
+            <div class="spec-card">
+              <h5><i class="fa-solid fa-layer-group"></i> 12 Target Classes</h5>
+              <p>ACL tear, PCL rupture, Medial meniscus tear, Lateral meniscus tear, Chondral defect, Bone marrow edema, Joint effusion, Patellar tendinopathy, and more.</p>
+            </div>
+            <div class="spec-card">
+              <h5><i class="fa-solid fa-cubes-stacked"></i> Multimodal Input</h5>
+              <p>Direct ingestion of 3D DICOM pixel arrays coupled with tokenized radiology report notes for weak-supervision and multi-label classification.</p>
+            </div>
+            <div class="spec-card">
+              <h5><i class="fa-solid fa-wand-magic-sparkles"></i> Weak-Labeling</h5>
+              <p>Automated extraction of training labels from unstructured medical text reports to overcome scarce annotated training datasets in clinical settings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COFFEE SHOP MODAL -->
+  <div class="modal-backdrop" id="coffeeModal" role="dialog" aria-modal="true" aria-labelledby="coffeeModalTitle">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-mug-hot text-accent"></i>
+          <h3 id="coffeeModalTitle">Coffee Shop Responsive Website UI</h3>
+        </div>
+        <button class="modal-close-btn" data-close="coffeeModal" aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="coffee-modal-hero">
+          <img src="./assets/images/coffee_project.jpg" alt="Coffee Shop Website Mockup" class="modal-banner-img">
+        </div>
+        <div class="coffee-details-content">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.8rem;">
+            <h4 style="margin: 0;">Architecture & Implementation Highlights</h4>
+            <a href="https://github.com/MehwishAlam123/COFFEE-WEBSITE" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fa-brands fa-github"></i> Open COFFEE-WEBSITE Repository
+            </a>
+          </div>
+          <p>A responsive 4-page commercial showcase website with structured HTML5 semantics, tailored CSS layouts, and modular vanilla JavaScript components.</p>
+          <div class="pages-list-grid">
+            <div class="page-item">
+              <strong>1. Home</strong>
+              <p>Hero banner with call-to-action buttons, brand story, and highlight specialties.</p>
+            </div>
+            <div class="page-item">
+              <strong>2. Menu</strong>
+              <p>Categorized artisan drinks, brewing options, and dynamic price displays.</p>
+            </div>
+            <div class="page-item">
+              <strong>3. Gallery</strong>
+              <p>Responsive masonry layout showcasing cafe ambiance and barista craft.</p>
+            </div>
+            <div class="page-item">
+              <strong>4. Testimonials</strong>
+              <p>Interactive customer feedback cards with rating stars and mobile swipe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FLOATING CHAT BUTTON -->
+  <button id="floatingChatBtn" class="floating-chat-trigger" aria-label="Open Assistant" title="Chat with Mehwish">
+    <i class="fa-solid fa-comments"></i>
+    <span class="chat-tooltip">Ask Mehwish</span>
+  </button>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript Application -->
+  <script src="app.js"></script>
+</body>
+</html>
