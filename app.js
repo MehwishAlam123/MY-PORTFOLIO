@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initNeuralCanvas();
-  initTypewriter();
   initMobileMenu();
   initScrollSpy();
   initCircularProjectOrbit();
@@ -81,8 +80,8 @@ function initNeuralCanvas() {
     ctx.clearRect(0, 0, width, height);
 
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const nodeColor = isLight ? 'rgba(2, 132, 199, ' : 'rgba(0, 242, 254, ';
-    const lineColor = isLight ? 'rgba(100, 116, 139, ' : 'rgba(121, 40, 202, ';
+    const nodeColor = isLight ? 'rgba(37, 99, 235, ' : 'rgba(96, 165, 250, ';
+    const lineColor = isLight ? 'rgba(109, 40, 217, ' : 'rgba(139, 92, 246, ';
 
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
@@ -121,58 +120,6 @@ function initNeuralCanvas() {
   }
 
   render();
-}
-
-/* --------------------------------------------------
- * 3. HERO TYPEWRITER EFFECT
- * -------------------------------------------------- */
-function initTypewriter() {
-  const dynamicTextEl = document.getElementById('typedText');
-  if (!dynamicTextEl) return;
-
-  const roles = [
-    'Machine Learning & Deep Learning',
-    'B.Tech CSE (AI/ML) @ RAIT (2025–2029)',
-    'Hybrid AI (Minimax + Random Forest)',
-    'Medical AI & Multimodal DICOM Models',
-    'Responsive Full-Stack Web Development',
-    'Data Structures & Algorithms (30+ Solved)'
-  ];
-
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const typeSpeed = 70;
-  const deleteSpeed = 35;
-  const delayBetween = 2000;
-
-  function type() {
-    const currentRole = roles[roleIndex];
-
-    if (isDeleting) {
-      dynamicTextEl.textContent = currentRole.substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      dynamicTextEl.textContent = currentRole.substring(0, charIndex + 1);
-      charIndex++;
-    }
-
-    if (!isDeleting && charIndex === currentRole.length) {
-      isDeleting = true;
-      setTimeout(type, delayBetween);
-      return;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(type, 350);
-      return;
-    }
-
-    const currentSpeed = isDeleting ? deleteSpeed : typeSpeed;
-    setTimeout(type, currentSpeed);
-  }
-
-  type();
 }
 
 /* --------------------------------------------------
@@ -562,18 +509,12 @@ function initCircularProjectOrbit() {
  * 6. MODAL SYSTEM
  * -------------------------------------------------- */
 function initModals() {
-  const openResumeBtn = document.getElementById('openResumeBtn');
   const heroPlayAiBtn = document.getElementById('heroPlayAiBtn');
-  const resumeModal = document.getElementById('resumeModal');
   const gameModal = document.getElementById('gameModal');
   const mriModal = document.getElementById('mriModal');
   const coffeeModal = document.getElementById('coffeeModal');
 
   // Trigger buttons
-  if (openResumeBtn && resumeModal) {
-    openResumeBtn.addEventListener('click', () => openModal(resumeModal));
-  }
-
   if (heroPlayAiBtn && gameModal) {
     heroPlayAiBtn.addEventListener('click', () => openModal(gameModal));
   }
@@ -617,13 +558,6 @@ function initModals() {
     }
   });
 
-  // Print Resume
-  const printResumeBtn = document.getElementById('printResumeBtn');
-  if (printResumeBtn) {
-    printResumeBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 }
 
 function openModal(modalEl) {
@@ -654,7 +588,7 @@ function initTerminalCopy() {
         self.academic_years = "2025 - 2029"
         self.focus_domains = [
             "Applied Machine Learning",
-            "Medical Deep Learning (DICOM)",
+            "Image Analysis",
             "Responsive Web Engineering",
             "Data Structures & Algorithms"
         ]`;
@@ -880,8 +814,8 @@ function initPortfolioAIChat() {
 
   const knowledgeBase = [
     {
-      keywords: ['mri', 'knee', 'medical', 'abnormality', 'dicom', 'radiology'],
-      response: "🏥 <strong>Knee MRI Abnormality Detection:</strong> Mehwish is actively developing a multimodal deep learning model to detect <strong>12 knee abnormalities</strong> simultaneously from MRI scans. It integrates 3D DICOM imaging with clinical radiology report text using weak-labeling techniques and multi-label classification!"
+      keywords: ['mri', 'knee', 'abnormality', 'dicom', 'report'],
+      response: "🧠 <strong>Knee MRI Image-Analysis Model:</strong> Mehwish is developing a deep learning model to detect <strong>12 knee abnormalities</strong> from MRI scans using image data, report text, weak labeling, and multi-label classification."
     },
     {
       keywords: ['tic-tac-toe', 'tictactoe', 'minimax', 'random forest', 'hybrid', 'game'],
@@ -893,11 +827,23 @@ function initPortfolioAIChat() {
     },
     {
       keywords: ['education', 'college', 'university', 'rait', 'dy patil', 'degree', 'btech', 'school'],
-      response: "🎓 <strong>Education Background:</strong><br>• <strong>B.Tech in CSE (AI/ML):</strong> Ramrao Adik Institute of Technology, D.Y. Patil University (RAIT) | 2025–2029 (Second Year)<br>• <strong>Higher Secondary (12th):</strong> Oxford Public School (2022–2024)<br>• <strong>Secondary (10th):</strong> Sacred Heart School (2022)"
+      response: "🎓 <strong>Education Background:</strong><br>• <strong>B.Tech in CSE (AI/ML):</strong> Ramrao Adik Institute of Technology, D.Y. Patil University (RAIT) | 2025–2029 | CGPA: 8.66<br>• <strong>Higher Secondary (12th):</strong> Oxford Public School (2022–2024)<br>• <strong>Secondary (10th):</strong> Sacred Heart School (2022)"
     },
     {
       keywords: ['skill', 'skills', 'python', 'java', 'c', 'tech', 'languages', 'stack'],
-      response: "⚡ <strong>Technical Skills:</strong><br>• <strong>Languages:</strong> Python, C, Java<br>• <strong>Frontend:</strong> HTML5, CSS3, JavaScript (DOM, components, responsive design)<br>• <strong>Core CS:</strong> Data Structures & Algorithms, Object-Oriented Programming (OOP)<br>• <strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Linux & VirtualBox"
+      response: "⚡ <strong>Technical Skills:</strong><br>• <strong>Programming Languages:</strong> C, Python, Java<br>• <strong>AI & ML:</strong> PyTorch, TorchVision, Scikit-learn, Random Forest, Multi-Label Classification, Weak Labeling, Data Augmentation<br>• <strong>Data & Image Analysis:</strong> NumPy, Pandas, OpenCV, Pydicom, Albumentations<br>• <strong>Web:</strong> HTML5, CSS3, JavaScript, Responsive Web Design<br>• <strong>Core CS:</strong> Data Structures & Algorithms, Object-Oriented Programming, Minimax"
+    },
+    {
+      keywords: ['specialized', 'specialization', 'artificial intelligence', 'machine learning', 'aiml', 'ai ml'],
+      response: "🤖 <strong>AI/ML Specialization:</strong> Mehwish is pursuing a <strong>B.Tech in Computer Science & Engineering, specialized in Artificial Intelligence and Machine Learning</strong> at RAIT, D.Y. Patil University. Her coursework and project work include deep learning, multi-label classification, weak labeling, and a hybrid Minimax + Random Forest game model."
+    },
+    {
+      keywords: ['experience', 'in amigos', 'ngo', 'figma'],
+      response: "🧩 <strong>Experience — AI Web Development, InAmigos Foundation (October 2026):</strong><br>• Developed a responsive website for the NGO.<br>• Built a portfolio featuring interactive 3D project showcases and a portfolio assistant.<br>• Refined interface layouts in Figma."
+    },
+    {
+      keywords: ['achievement', 'hackathon', 'paypal', 'chargeguard', 'kaggle', 'rsna'],
+      response: "🏅 <strong>Achievements:</strong><br>• Participated in the PayPal AI Hackathon 2026, building ChargeGuard AI, an AI-powered dispute and subscription-management copilot for merchants.<br>• Competed in Kaggle's RSNA Knee MRI Abnormality Detection challenge, evaluated using macro-averaged AUC-ROC."
     },
     {
       keywords: ['leetcode', 'dsa', 'data structures', 'algorithms', 'trees', 'problem'],
@@ -908,28 +854,43 @@ function initPortfolioAIChat() {
       response: "🛡️ <strong>Leadership & Position of Responsibility:</strong> Mehwish served as the <strong>Technical Co-Head</strong> of the Tech Committee for the <strong>IETE Student Chapter</strong>, co-leading student volunteers and organizing a hands-on Ethical Hacking workshop with VirtualBox & Kali Linux."
     },
     {
-      keywords: ['contact', 'hire', 'internship', 'email', 'phone', 'reach', 'resume'],
+      keywords: ['contact', 'hire', 'internship', 'email', 'phone', 'reach', 'availability', 'available'],
       response: "💼 <strong>Contact & Availability:</strong> Mehwish is actively seeking Software Development and Machine Learning internships!<br>• <strong>Email:</strong> <a href='mailto:mehwishalam987@gmail.com'>mehwishalam987@gmail.com</a><br>• <strong>Phone:</strong> +91 9296565349<br>• <strong>Location:</strong> Navi Mumbai, Maharashtra<br>• <strong>GitHub:</strong> <a href='https://github.com/MehwishAlam123' target='_blank'>github.com/MehwishAlam123</a>"
     }
   ];
+  const pendingReplies = new Set();
 
   function getAIResponse(userText) {
-    const cleanText = userText.toLowerCase();
+    const cleanText = userText.toLowerCase().replace(/[^a-z0-9+#-]+/g, ' ').trim();
     for (const item of knowledgeBase) {
-      if (item.keywords.some(kw => cleanText.includes(kw))) {
+      if (item.keywords.some((kw) => {
+        const keyword = kw.toLowerCase().replace(/[^a-z0-9+#-]+/g, ' ').trim();
+        return ` ${cleanText} `.includes(` ${keyword} `);
+      })) {
         return item.response;
       }
     }
-    return "💡 Mehwish is a 2nd year B.Tech student in CSE (AI/ML) at RAIT, DY Patil University, proficient in Python, Java, JavaScript, and Machine Learning. Try asking about her <em>Knee MRI model</em>, <em>Tic-Tac-Toe prediction model</em>, <em>LeetCode practice</em>, or <em>internship availability</em>!";
+    return "I can help with Mehwish's software engineering studies, AI/ML specialization, projects, experience, skills, achievements, or internship availability. Try asking about the <em>Knee MRI model</em>, <em>Tic-Tac-Toe project</em>, or <em>PayPal AI Hackathon</em>.";
   }
 
-  function appendMessage(sender, htmlContent) {
+  function appendMessage(sender, content) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `message msg-${sender}`;
 
     const bubbleDiv = document.createElement('div');
-    bubbleDiv.className = 'msg-bubble';
-    bubbleDiv.innerHTML = `<p>${htmlContent}</p>`;
+    bubbleDiv.className = 'msg-bubble msg-bubble-upgraded';
+    const messageParagraph = document.createElement('p');
+    if (sender === 'user') {
+      messageParagraph.textContent = content;
+    } else {
+      messageParagraph.innerHTML = content;
+      const avatar = document.createElement('div');
+      avatar.className = 'msg-avatar-mini';
+      avatar.setAttribute('aria-hidden', 'true');
+      avatar.innerHTML = '<i class="fa-solid fa-robot"></i>';
+      msgDiv.appendChild(avatar);
+    }
+    bubbleDiv.appendChild(messageParagraph);
 
     const timeSpan = document.createElement('span');
     timeSpan.className = 'msg-time';
@@ -943,6 +904,14 @@ function initPortfolioAIChat() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
+  function queueReply(query, delay) {
+    const timerId = setTimeout(() => {
+      pendingReplies.delete(timerId);
+      appendMessage('ai', getAIResponse(query));
+    }, delay);
+    pendingReplies.add(timerId);
+  }
+
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const query = chatInput.value.trim();
@@ -951,10 +920,7 @@ function initPortfolioAIChat() {
     appendMessage('user', query);
     chatInput.value = '';
 
-    setTimeout(() => {
-      const reply = getAIResponse(query);
-      appendMessage('ai', reply);
-    }, 400);
+    queueReply(query, 400);
   });
 
   quickChips.forEach(chip => {
@@ -962,20 +928,20 @@ function initPortfolioAIChat() {
       const query = chip.getAttribute('data-query');
       if (query) {
         appendMessage('user', query);
-        setTimeout(() => {
-          const reply = getAIResponse(query);
-          appendMessage('ai', reply);
-        }, 350);
+        queueReply(query, 350);
       }
     });
   });
 
   if (resetChatBtn) {
     resetChatBtn.addEventListener('click', () => {
+      pendingReplies.forEach(clearTimeout);
+      pendingReplies.clear();
       chatMessages.innerHTML = `
         <div class="message msg-ai">
-          <div class="msg-bubble">
-            <p>Chat cleared! 👋 Feel free to ask another question about Mehwish's portfolio or projects.</p>
+          <div class="msg-avatar-mini" aria-hidden="true"><i class="fa-solid fa-robot"></i></div>
+          <div class="msg-bubble msg-bubble-upgraded">
+            <p>Chat cleared! Feel free to ask another question about Mehwish's portfolio or projects.</p>
           </div>
           <span class="msg-time">Just now</span>
         </div>
@@ -985,8 +951,15 @@ function initPortfolioAIChat() {
   }
 
   if (floatingChatBtn) {
+    const aiSection = document.getElementById('ai-assistant');
+    if (aiSection && 'IntersectionObserver' in window) {
+      const assistantObserver = new IntersectionObserver(([entry]) => {
+        floatingChatBtn.classList.toggle('is-hidden', entry.isIntersecting);
+      }, { threshold: 0.1 });
+      assistantObserver.observe(aiSection);
+    }
+
     floatingChatBtn.addEventListener('click', () => {
-      const aiSection = document.getElementById('ai-assistant');
       if (aiSection) {
         aiSection.scrollIntoView({ behavior: 'smooth' });
         chatInput.focus();
@@ -1373,5 +1346,3 @@ function initTechCubical() {
     card.addEventListener('click', inspect);
   });
 }
-
-
