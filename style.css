@@ -2680,30 +2680,6 @@ body {
   min-height: 1rem;
 }
 
-/* RESUME SECTION */
-.resume-viewer {
-  padding: 1.25rem;
-  overflow: hidden;
-}
-
-.resume-actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-.resume-preview {
-  display: block;
-  width: 100%;
-  height: min(80vh, 1000px);
-  min-height: 600px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: #fff;
-}
-
 /* FOOTER */
 .site-footer {
   background: var(--bg-secondary);
@@ -3169,10 +3145,6 @@ body {
   }
   .contact-grid {
     grid-template-columns: 1fr;
-  }
-  .resume-preview {
-    height: 70vh;
-    min-height: 450px;
   }
   .about-grid {
     grid-template-columns: 1fr;
