@@ -80,8 +80,8 @@ function initNeuralCanvas() {
     ctx.clearRect(0, 0, width, height);
 
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const nodeColor = isLight ? 'rgba(37, 99, 235, ' : 'rgba(96, 165, 250, ';
-    const lineColor = isLight ? 'rgba(109, 40, 217, ' : 'rgba(139, 92, 246, ';
+    const nodeColor = isLight ? 'rgba(10, 10, 10, ' : 'rgba(198, 255, 0, ';
+    const lineColor = isLight ? 'rgba(161, 161, 161, ' : 'rgba(198, 255, 0, ';
 
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
@@ -735,7 +735,7 @@ function initTicTacToeAI() {
     renderBoard();
 
     if (checkWin(boardState, human)) {
-      statusText.innerHTML = '<span style="color: #10b981;">🎉 Impressive! You beat the model!</span>';
+      statusText.innerHTML = '<span style="color: #C6FF00; font-weight: 700;">🎉 Impressive! You beat the model!</span>';
       isGameOver = true;
       return;
     }
@@ -755,7 +755,7 @@ function initTicTacToeAI() {
         renderBoard();
 
         if (checkWin(boardState, ai)) {
-          statusText.innerHTML = '<span style="color: #ff0080;">🤖 Minimax AI Wins! Optimal heuristics applied.</span>';
+          statusText.innerHTML = '<span style="color: #FFFFFF; font-weight: 700;">🤖 Minimax AI Wins! Optimal heuristics applied.</span>';
           isGameOver = true;
         } else if (isBoardFull(boardState)) {
           statusText.innerHTML = '<span>🤝 Tactical Draw! Both players played optimal moves.</span>';
